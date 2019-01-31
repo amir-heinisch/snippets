@@ -1,0 +1,11 @@
+#######################################################
+#                                                     #
+# This file contains configurations.                  #
+#                                                     #
+# @package    dotfiles/vim                            #
+# @filename   vimrc                                   #
+# @author     Amir Heinisch <mail@amir-heinisch.de>   #
+# @link       https://amir-heinisch.de                #
+# @version    1.0                                     #
+#                                                     #
+#######################################################
