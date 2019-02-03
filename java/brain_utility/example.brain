@@ -1,0 +1,537 @@
+brain "example" {
+	
+	// @ENTRYPOINT
+	sense ahead food else 2
+	jump 11
+	
+	// @ENTRYPOINT1
+	turn right
+	direction northwest else 5
+	jump 7
+	
+	// @ENTRYPOINT2
+	sense ahead food else 2
+	jump 11
+	
+	// @ENTRYPOINT3
+	sense ahead home else 172
+	turn right
+	direction northwest else 7
+	jump 172
+	
+	// @PICKUPFOOD
+	sense ahead antlion else 13
+	jump 152
+	
+	// @PICKUPFOOD1
+	sense ahead friend else 15
+	jump 163
+	
+	// @PICKUPFOOD2
+	move else 15
+	pickup else 172
+	sense here food else 22
+	turn left
+	turn left
+	turn left
+	jump 51
+	
+	// @PICKUPFOOD3
+	sense ahead food else 28
+	turn left
+	turn left
+	turn left
+	mark 6
+	jump 53
+	
+	// @PICKUPFOOD6
+	sense right food else 34
+	turn left
+	turn left
+	turn left
+	mark 6
+	jump 53
+	
+	// @PICKUPFOOD7
+	sense left food else 40
+	turn left
+	turn left
+	turn left
+	mark 6
+	jump 53
+	
+	// @PICKUPFOOD8
+	turn left
+	turn left
+	turn left
+	sense right food else 40
+	mark 6
+	jump 53
+	
+	// @PICKUPFOOD9
+	sense left food else 49
+	mark 6
+	jump 53
+	
+	// @PICKUPFOOD10
+	move else 49
+	jump 231
+	
+	// @PICKUPFOOD11
+	move else 51
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET
+	sense here marker 0 else 55
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET1
+	sense here marker 1 else 57
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET2
+	sense here marker 2 else 59
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET3
+	sense here marker 3 else 61
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET4
+	sense here marker 4 else 63
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET5
+	sense here marker 5 else 65
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET6
+	direction northwest else 68
+	mark 3
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET7
+	direction northeast else 71
+	mark 4
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET8
+	direction east else 74
+	mark 5
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET9
+	direction southeast else 77
+	mark 0
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET10
+	direction southwest else 80
+	mark 1
+	jump 186
+	
+	// @MARKREVERSEANDMAKEFOODSTREET11
+	direction west else 172
+	mark 2
+	jump 186
+	
+	// @DROPFOOD
+	drop else 90
+	jump 90
+	
+	// @DROPFOODANDGETMORE
+	drop else 86
+	
+	// @DROPFOODANDGETMORE1
+	turn right
+	turn right
+	turn right
+	jump 282
+	
+	// @RESTARTFROMBASE
+	sense ahead food else 92
+	jump 11
+	
+	// @RESTARTFROMBASE1
+	sense right food else 95
+	turn right
+	jump 11
+	
+	// @RESTARTFROMBASE2
+	sense left food else 97
+	jump 11
+	
+	// @RESTARTFROMBASE3
+	turn right
+	turn right
+	turn right
+	sense ahead food else 102
+	jump 11
+	
+	// @RESTARTFROMBASE4
+	sense right food else 105
+	turn right
+	jump 11
+	
+	// @RESTARTFROMBASE5
+	sense left food else 172
+	turn left
+	jump 11
+	
+	// @MOVEANDMARK
+	sense ahead antlion else 110
+	jump 152
+	
+	// @MOVEANDMARK1
+	sense ahead home else 112
+	jump 150
+	
+	// @MOVEANDMARK2
+	sense ahead marker 0 else 114
+	jump 150
+	
+	// @MOVEANDMARK3
+	sense ahead marker 1 else 116
+	jump 150
+	
+	// @MOVEANDMARK4
+	sense ahead marker 2 else 118
+	jump 150
+	
+	// @MOVEANDMARK5
+	sense ahead marker 3 else 120
+	jump 150
+	
+	// @MOVEANDMARK6
+	sense ahead marker 4 else 122
+	jump 150
+	
+	// @MOVEANDMARK7
+	sense ahead marker 5 else 124
+	jump 150
+	
+	// @MOVEANDMARK8
+	sense ahead marker 6 else 126
+	jump 152
+	
+	// @MOVEANDMARK9
+	direction northwest else 130
+	move else 152
+	mark 0
+	jump 172
+	
+	// @MOVEANDMARK10
+	direction northeast else 134
+	move else 152
+	mark 1
+	jump 172
+	
+	// @MOVEANDMARK11
+	direction east else 138
+	move else 152
+	mark 2
+	jump 172
+	
+	// @MOVEANDMARK12
+	direction southeast else 142
+	move else 152
+	mark 3
+	jump 172
+	
+	// @MOVEANDMARK13
+	direction southwest else 146
+	move else 152
+	mark 4
+	jump 172
+	
+	// @MOVEANDMARK14
+	direction west else 172
+	move else 152
+	mark 5
+	jump 172
+	
+	// @MOVEANDMARK15
+	move else 163
+	jump 172
+	
+	// @MOVERANDOMLEFTORRIGHT
+	sense left food else 155
+	turn left
+	jump 11
+	
+	// @MOVERANDOMLEFTORRIGHT1
+	sense right food else 158
+	turn right
+	jump 11
+	
+	// @MOVERANDOMLEFTORRIGHT2
+	flip 2 else 161
+	turn left
+	jump 108
+	
+	// @MOVERANDOMLEFTORRIGHT3
+	turn right
+	jump 108
+	
+	// @MOVERANDOMLEFTORRIGHTORBACKWARDS
+	flip 2 else 165
+	jump 152
+	
+	// @MOVERANDOMLEFTORRIGHTORBACKWARDS1
+	flip 2 else 169
+	turn right
+	turn right
+	jump 108
+	
+	// @MOVERANDOMLEFTORRIGHTORBACKWARDS2
+	turn left
+	turn left
+	jump 108
+	
+	// @MOVERANDOMPRIOAHEAD
+	sense ahead food else 174
+	jump 11
+	
+	// @MOVERANDOMPRIOAHEAD1
+	sense left food else 177
+	turn left
+	jump 11
+	
+	// @MOVERANDOMPRIOAHEAD2
+	sense right food else 180
+	turn right
+	jump 11
+	
+	// @MOVERANDOMPRIOAHEAD3
+	flip 2 else 108
+	flip 2 else 184
+	turn left
+	jump 108
+	
+	// @MOVERANDOMPRIOAHEAD4
+	turn right
+	jump 108
+	
+	// @MAKEFOODSTREET
+	sense here home else 188
+	jump 85
+	
+	// @MAKEFOODSTREET1
+	mark 6
+	sense here marker 0 else 191
+	jump 201
+	
+	// @MAKEFOODSTREET2
+	sense here marker 1 else 193
+	jump 206
+	
+	// @MAKEFOODSTREET3
+	sense here marker 2 else 195
+	jump 211
+	
+	// @MAKEFOODSTREET4
+	sense here marker 3 else 197
+	jump 221
+	
+	// @MAKEFOODSTREET5
+	sense here marker 4 else 199
+	jump 226
+	
+	// @MAKEFOODSTREET6
+	sense here marker 5 else 172
+	jump 216
+	
+	// @MAKEFOODSTREET_TURNTOSOUTHEASTANDMOVE
+	direction southeast else 204
+	move else 201
+	jump 186
+	
+	// @MAKEFOODSTREET_TURNTOSOUTHEASTANDMOVE1
+	turn right
+	jump 201
+	
+	// @MAKEFOODSTREET_TURNTOSOUTHWESTANDMOVE
+	direction southwest else 209
+	move else 206
+	jump 186
+	
+	// @MAKEFOODSTREET_TURNTOSOUTHWESTANDMOVE1
+	turn right
+	jump 206
+	
+	// @MAKEFOODSTREET_TURNTOWESTANDMOVE
+	direction west else 214
+	move else 211
+	jump 186
+	
+	// @MAKEFOODSTREET_TURNTOWESTANDMOVE1
+	turn right
+	jump 211
+	
+	// @MAKEFOODSTREET_TURNTOEASTANDMOVE
+	direction east else 219
+	move else 216
+	jump 186
+	
+	// @MAKEFOODSTREET_TURNTOEASTANDMOVE1
+	turn right
+	jump 216
+	
+	// @MAKEFOODSTREET_TURNTONORTHWESTANDMOVE
+	direction northwest else 224
+	move else 221
+	jump 186
+	
+	// @MAKEFOODSTREET_TURNTONORTHWESTANDMOVE1
+	turn right
+	jump 221
+	
+	// @MAKEFOODSTREET_TURNTONORTHEASTANDMOVE
+	direction northeast else 229
+	move else 226
+	jump 186
+	
+	// @MAKEFOODSTREET_TURNTONORTHEASTANDMOVE1
+	turn right
+	jump 226
+	
+	// @DELETEFOODSTREET
+	sense here home else 233
+	jump 83
+	
+	// @DELETEFOODSTREET1
+	sense ahead food else 235
+	jump 186
+	
+	// @DELETEFOODSTREET2
+	sense left food else 237
+	jump 186
+	
+	// @DELETEFOODSTREET3
+	sense right food else 239
+	jump 186
+	
+	// @DELETEFOODSTREET4
+	unmark 6
+	sense here marker 0 else 242
+	jump 267
+	
+	// @DELETEFOODSTREET5
+	sense here marker 1 else 244
+	jump 262
+	
+	// @DELETEFOODSTREET6
+	sense here marker 2 else 246
+	jump 257
+	
+	// @DELETEFOODSTREET7
+	sense here marker 3 else 248
+	jump 272
+	
+	// @DELETEFOODSTREET8
+	sense here marker 4 else 250
+	jump 277
+	
+	// @DELETEFOODSTREET9
+	sense here marker 5 else 172
+	jump 252
+	
+	// @TURNTOEASTANDMOVE
+	direction east else 255
+	move else 252
+	jump 231
+	
+	// @TURNTOEASTANDMOVE1
+	turn right
+	jump 252
+	
+	// @TURNTOWESTANDMOVE
+	direction west else 260
+	move else 257
+	jump 231
+	
+	// @TURNTOWESTANDMOVE1
+	turn right
+	jump 257
+	
+	// @TURNTOSOUTHWESTANDMOVE
+	direction southwest else 265
+	move else 262
+	jump 231
+	
+	// @TURNTOSOUTHWESTANDMOVE1
+	turn right
+	jump 262
+	
+	// @TURNTOSOUTHEASTANDMOVE
+	direction southeast else 270
+	move else 267
+	jump 231
+	
+	// @TURNTOSOUTHEASTANDMOVE1
+	turn right
+	jump 267
+	
+	// @TURNTONORTHWESTANDMOVE
+	direction northwest else 275
+	move else 272
+	jump 231
+	
+	// @TURNTONORTHWESTANDMOVE1
+	turn right
+	jump 272
+	
+	// @TURNTONORTHEASTANDMOVE
+	direction northeast else 280
+	move else 277
+	jump 231
+	
+	// @TURNTONORTHEASTANDMOVE1
+	turn right
+	jump 277
+	
+	// @FOLLOWFOODSTREET
+	sense here marker 6 else 285
+	unmark 6
+	jump 282
+	
+	// @FOLLOWFOODSTREET1
+	sense ahead marker 6 else 287
+	jump 301
+	
+	// @FOLLOWFOODSTREET2
+	sense left marker 6 else 290
+	turn left
+	jump 301
+	
+	// @FOLLOWFOODSTREET3
+	sense right marker 6 else 293
+	turn right
+	jump 301
+	
+	// @FOLLOWFOODSTREET4
+	sense ahead food else 295
+	jump 11
+	
+	// @FOLLOWFOODSTREET5
+	sense left food else 298
+	turn left
+	jump 11
+	
+	// @FOLLOWFOODSTREET6
+	sense right food else 172
+	turn right
+	jump 11
+	
+	// @FOLLOWFOODSTREET7
+	move else 303
+	jump 282
+	
+	// @FOLLOWFOODSTREET8
+	turn right
+	jump 172
+
+	// @END 
+	jump 305
+
+}
