@@ -25,9 +25,17 @@ case "$1" in
 			echo "No message given. Use 'jarvis help' for more info."
 			exit 1
 		fi
+        
+        # Check if optional title if given.
+		if [[ -z "$3" ]]; then
+            TITLE="$MSG_TITLE"
+        else
+            TITLE="$3 (on $MSG_TITLE)"
+        fi
 
 		# Send message.	
-		curl --max-time "$TIMEOUT" -g -X GET "$API_URL$API_TOKEN/sendMessage?chat_id=$CHAT_ID&text=$MSG_TITLE$2&parse_mode=html&disable_web_page_preview=True"
+		curl --max-time "$TIMEOUT" -g -X GET "$API_URL$API_TOKEN/sendMessage?chat_id=$CHAT_ID&text=<b>[$TITLE]</b>%0A$2&parse_mode=html&disable_web_page_preview=True"
+		echo "<b>[$TITLE]</b>%0A$2"
 		echo
 		;;
 	"help" | *)
