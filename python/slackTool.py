@@ -16,13 +16,13 @@ import struct
 from fcntl import *
 
 # NOTE: Read until newline.
-def read_slack(target_dev_file, offset, slack_size):
+def read_slack(target_dev_file):
     print(target_dev_file.readline().decode(errors='ignore'), end='')
 
-def wipe_slack(target_dev_file, offset, slack_size):
-    write_slack(target_dev_file, offset, slack_size, b'\00'*slack_size)
+def wipe_slack(target_dev_file, slack_size):
+    write_slack(target_dev_file, slack_size, b'\00'*slack_size)
 
-def write_slack(target_dev_file, offset, slack_size, inp=''):
+def write_slack(target_dev_file, slack_size, inp=''):
     if not inp:
         inp = input('Enter data to hide in slack (max {} characters): '.format(slack_size)).encode()
     if (len(inp) > slack_size):
@@ -84,11 +84,11 @@ def main(argc, argv):
         logging.info('block size: {}'.format(str(fs_block_size)))
 
         if argv[1] == 'read' or argv[1] == 'r':
-            read_slack(target_dev_file, offset, slack_size)
+            read_slack(target_dev_file)
         elif argv[1] == 'write' or argv[1] == 'w':
-            write_slack(target_dev_file, offset, slack_size)
+            write_slack(target_dev_file, slack_size)
         elif argv[1] == 'wipe' or argv[1] == 'wi':
-            wipe_slack(target_dev_file, offset, slack_size)
+            wipe_slack(target_dev_file, slack_size)
         else:
             logging.error('Selected mode is unknown!')
 
