@@ -1,0 +1,72 @@
+image: gcc:10
+
+stages:
+  - build-lab1
+  - test-lab1
+  - build-lab2
+  - build-lab3
+
+default:
+  cache:
+    paths:
+      - .apt-archives/
+      - .apt-lists/
+
+  before_script:
+    - rm -f /etc/apt/apt.conf.d/docker-clean
+    - mkdir -p .apt-archives/partial .apt-lists/partial
+    - echo "dir::state::lists $(pwd)/.apt-lists;" > /etc/apt/apt.conf.d/90-cache-lists
+    - echo "dir::cache::archives $(pwd)/.apt-archives;" > /etc/apt/apt.conf.d/90-cache-archives
+    - apt update
+    - apt-get -qq --yes install libfuse-dev libfuse2
+
+build-lab1:
+  stage: build-lab1
+  script:
+    - make lab1
+  artifacts:
+    paths:
+      - rpc/rpctest
+      - lock_server
+      - lock_tester
+
+test-rpc:
+  stage: test-lab1
+  variables:
+    RPC_LOSSY: 0
+  script:
+    - for i in {1..7}; do ./rpc/rpctest; done
+
+test-normal:
+  stage: test-lab1
+  variables:
+    RPC_LOSSY: 0
+  script:
+    - for i in {1..7}; do pkill -f lock_server || true; ./lock_server 3772 & ./lock_tester 3772; done
+
+test-lossy:
+  variables:
+    RPC_LOSSY: 5
+  stage: test-lab1
+  script:
+    - for i in {1..7}; do pkill -f lock_server || true; ./lock_server 3772 & ./lock_tester 3772; done
+
+build-lab2:
+  stage: build-lab2
+  script:
+    - make lab2
+  artifacts:
+    paths:
+      - yfs_client
+      - extent_server
+      - lock_server
+
+build-lab3:
+  stage: build-lab3
+  script:
+    - make lab3
+  artifacts:
+    paths:
+      - yfs_client
+      - extent_server
+      - lock_server

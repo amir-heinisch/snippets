@@ -1,0 +1,6 @@
+__gitignore() {
+	curl -L -s https://www.gitignore.io/api/$@
+}
+alias gi=__gitignore
+
+gi c > .gitignore
